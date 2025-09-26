@@ -10,6 +10,12 @@ public class Nave extends Entidade {
         this.capacidade = capacidade;
     }
 
+    @Override
+    public String toString() {
+        return "Nave(ID: " + idUnico + ", Modelo: " + modelo + ", Capacidade: " + capacidade + ")";
+    }
+
+    //GETTERS E SETTERS
     public String getModelo() {
         return modelo;
     }
@@ -18,7 +24,11 @@ public class Nave extends Entidade {
         return capacidade;
     }
 
-    public String toString() {
-        return "Nave(ID: " + idUnico + ", Modelo: " + modelo + ", Capacidade: " + capacidade + ")";
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
     }
 }

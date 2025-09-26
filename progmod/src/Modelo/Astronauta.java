@@ -5,11 +5,17 @@ public class Astronauta extends Entidade{
     private String especialidade;
 
     public Astronauta(String nome, String especialidade){
-        super();
+        super(); //CHAMA O CONSTRUTOR DA CLASSE BASE
         this.nome = nome;
         this.especialidade = especialidade;
     }
 
+    @Override
+    public String toString() {
+        return "Astronauta(ID: " + idUnico + ", NOME: " + nome + ", ESPECIALIDADE: " + especialidade + ")";
+    }
+
+    //GETTERS E SETTERS
     public String getNome() {
         return nome;
     }
@@ -18,7 +24,11 @@ public class Astronauta extends Entidade{
         return especialidade;
     }
 
-    public String toString() {
-        return "Astronauta(ID: " + idUnico + ", NOME: " + nome + ", ESPECIALIDADE: " + especialidade + ")";
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 }

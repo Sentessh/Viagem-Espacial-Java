@@ -15,6 +15,8 @@ public class Missao extends Entidade {
         this.tripulacao = new ArrayList<>();
     }
 
+    //GERENCIAMENTO DA TRIPULACAO
+    //ADICIONA ASTRONAUTA
     public void adicionarAstronauta(ItemMissao item){
         if(tripulacao.size() < nave.getCapacidade()){
             tripulacao.add(item);
@@ -24,6 +26,7 @@ public class Missao extends Entidade {
         }
     }
 
+    //REMOVE ASTRONAUTA
     public void removerAstronauta(ItemMissao item){
         if(tripulacao.remove(item)){
             System.out.println("Astronauta " + item.getAstronauta().getNome() + " removido com sucesso!");
@@ -32,6 +35,7 @@ public class Missao extends Entidade {
         }
     }
 
+    //EXIBE TRIPULACAO COMPLETA
     public void exibirTripulacao(){
         System.out.println("\n#--- TRIPULAÇÃO DA MISSÃO " + this.nome + "(" + tripulacao.size() + "|" + nave.getCapacidade() + ") ---#");
         for(ItemMissao item : tripulacao){
@@ -39,6 +43,7 @@ public class Missao extends Entidade {
         }
     }
 
+    @Override
     public String toString(){
         return "Missao(ID: " + idUnico + ", Nome: " + nome + ", Nave: " + nave.getModelo() + ")";
     }
