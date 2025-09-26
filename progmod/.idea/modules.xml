@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/progmod.iml" filepath="$PROJECT_DIR$/progmod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SistemaAeroEspacial.iml" filepath="$PROJECT_DIR$/SistemaAeroEspacial.iml" />
     </modules>
   </component>
 </project>
