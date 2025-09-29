@@ -20,7 +20,7 @@ public class Missao extends Entidade {
     public void adicionarAstronauta(ItemMissao item){
         if(tripulacao.size() < nave.getCapacidade()){
             tripulacao.add(item);
-            System.out.println("Astronauta " + item.getAstronauta().getNome() + " adicionada com sucesso!");
+            System.out.println("Astronauta " + item.getAstronauta().getNome() + " adicionado com sucesso!");
         } else {
             System.out.println("A capacidade máxima da nave foi atingida. Não é possível adicionar novos astronautas.");
         }
@@ -45,6 +45,6 @@ public class Missao extends Entidade {
 
     @Override
     public String toString(){
-        return "Missao(ID: " + idUnico + ", Nome: " + nome + ", Nave: " + nave.getModelo() + ")";
+        return "Missao(ID: " + id + ", Nome: " + nome + ", Nave: " + nave.getModelo() + ")";
     }
 }

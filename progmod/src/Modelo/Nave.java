@@ -12,7 +12,7 @@ public class Nave extends Entidade {
 
     @Override
     public String toString() {
-        return "Nave(ID: " + idUnico + ", Modelo: " + modelo + ", Capacidade: " + capacidade + ")";
+        return "Nave(ID: " + id + ", Modelo: " + modelo + ", Capacidade: " + capacidade + ")";
     }
 
     //GETTERS E SETTERS

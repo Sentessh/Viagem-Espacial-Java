@@ -12,7 +12,7 @@ public class Astronauta extends Entidade{
 
     @Override
     public String toString() {
-        return "Astronauta(ID: " + idUnico + ", NOME: " + nome + ", ESPECIALIDADE: " + especialidade + ")";
+        return "Astronauta(ID: " + id + ", NOME: " + nome + ", ESPECIALIDADE: " + especialidade + ")";
     }
 
     //GETTERS E SETTERS

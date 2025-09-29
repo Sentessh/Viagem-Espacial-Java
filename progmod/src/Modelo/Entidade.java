@@ -1,17 +1,17 @@
 package Modelo;
 
-import java.util.*;
-
-//CLASSE ABSTRATA - BASE P/ TODAS AS ENTIDADES DO SISTEMA
 public abstract class Entidade {
-    protected String idUnico;
+    private static int contador = 0;
+    protected int id;
 
-    public Entidade(){
-        //IDENTIFICADOR ÚNICO UNIVERSAL
-        this.idUnico = UUID.randomUUID().toString();
+    public Entidade() {
+        this.id = ++contador;
     }
-    /*METODO ABSTRATO - FORNÇA AS SUBCLASSES A TER
-    O MÉTODO toString*/
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
     public abstract String toString();
 }
-
