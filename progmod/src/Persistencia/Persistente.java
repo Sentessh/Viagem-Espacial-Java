@@ -11,30 +11,52 @@ public class Persistente<T extends Entidade> {
         this.lista = new ArrayList<>();
     }
 
-    public void inserir(T obj) {
+    public boolean inserir(T obj) {
         lista.add(obj);
+        return true;
     }
     public boolean alterar(int id, T novoObj) {
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getId() == id) {
-                lista.set(i, novoObj);
-                return true;
+        try{
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i).getId() == id) {
+                    lista.set(i, novoObj);
+                    return true;
+                }
             }
+            throw new IdNaoEncontrado(id);
+        }catch(IdNaoEncontrado e){
+            System.err.println("Erro: "+e.getMessage());
+            return false;
         }
-        return false;
     }
 
     public boolean excluir(int id) {
-        return lista.removeIf(obj -> obj.getId() == id);
+        try{    
+            boolean remove = lista.removeIf(obj -> obj.getId() == id);
+            if(!remove){
+                throw new IdNaoEncontrado(id);
+            }
+            return true;
+        }
+        catch(IdNaoEncontrado e){
+            System.err.println("Erro: "+e.getMessage());
+            return false;
+        }
     }
 
-    public T buscarPorId(int id) {
-        for (T obj : lista) {
-            if (obj.getId() == id) {
-                return obj;
+    public T buscarPorId(int id){ //TEM QUE BOTAR IF OBJ == NULL NA INTERFACE
+        try{
+            for (T obj : lista) {
+                if (obj.getId() == id) {
+                    return obj;
+                }
             }
+            throw new IdNaoEncontrado(id);
+
+        }catch(IdNaoEncontrado e){
+            System.err.println("Erro: "+e.getMessage());
+            return null;
         }
-        return null;
     }
 
     public List<T> getTodos() {
